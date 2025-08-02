@@ -14,7 +14,7 @@ User can enhance their experience by setting it as the default page if they woul
 
 ## Todo list
 
-- [ ] Logic for searching (should be a function that maps a string to a URL)
+- [x] Logic for searching (should be a function that maps a string to a URL)
 - [ ] Nice UI (should only have a title and search bar at this point)
 - [ ] Add search engines
 - [ ] Complete UI based on reqs
