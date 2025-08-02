@@ -27,7 +27,10 @@ export default function App() {
           placeholder="Search ChatGPT"
           className="h-10 px-5 pr-10 text-sm focus:outline-none flex-grow flex-shrink basis-0 text-white"
         />
-        <button type="submit" className="mr-5 cursor-pointer">
+        <button
+          type="submit"
+          className="h-full aspect-square mr-1.5 flex items-center justify-center cursor-pointer"
+        >
           <svg
             className="h-4 w-4 fill-white"
             xmlns="http://www.w3.org/2000/svg"
