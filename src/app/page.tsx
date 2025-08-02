@@ -15,7 +15,9 @@ export default function Home() {
           Search GPT
         </h1>
       </Link>
-      <p className="mt-2 md:text-xl">A "search engine" but for Chat GPT.</p>
+      <p className="mt-2 md:text-xl">
+        A &quot;search engine&quot; but for Chat GPT.
+      </p>
       <form
         ref={formRef}
         onSubmit={(e) => {
