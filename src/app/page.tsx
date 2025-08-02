@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import parseURL from "./logic";
+import posthog from "posthog-js";
 
 export default function Home() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -21,7 +22,9 @@ export default function Home() {
           const formData = new FormData(e.currentTarget);
           const searchTerm = formData.get("search") as string;
           if (!searchTerm) return;
-          // sendPosthog(searchTerm);
+          posthog.capture("search", {
+            search_term: searchTerm,
+          });
           const url = parseURL(searchTerm);
           window.open(url, "_blank");
           formRef.current?.reset();
