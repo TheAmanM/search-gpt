@@ -3,17 +3,18 @@
 import { useRef } from "react";
 import parseURL from "./logic";
 import posthog from "posthog-js";
+import Link from "next/link";
 
 export default function Home() {
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
     <main className="h-svh w-svw flex flex-col items-center justify-center bg-[#1A1A1A] text-gray-400">
-      <a href="/">
+      <Link href="/">
         <h1 className="font-bold text-4xl md:text-5xl text-white">
           Search GPT
         </h1>
-      </a>
+      </Link>
       <p className="mt-2 md:text-xl">A "search engine" but for Chat GPT.</p>
       <form
         ref={formRef}
