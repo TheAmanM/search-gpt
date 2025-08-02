@@ -1,11 +1,15 @@
 import { parseURL } from "./logic";
+import { useRef } from "react";
 
 export default function App() {
+  const formRef = useRef<HTMLFormElement>(null);
+
   return (
     <main className="h-svh w-svw flex flex-col items-center justify-center bg-[#1A1A1A] text-gray-400">
-      <h1 className="font-bold text-4xl text-white">Search GPT</h1>
-      <p className="mt-2">A "search engine" but for Chat GPT.</p>
+      <h1 className="font-bold text-4xl md:text-5xl text-white">Search GPT</h1>
+      <p className="mt-2 md:text-xl">A "search engine" but for Chat GPT.</p>
       <form
+        ref={formRef}
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.currentTarget);
@@ -13,8 +17,9 @@ export default function App() {
           if (!searchTerm) return;
           const url = parseURL(searchTerm);
           window.open(url, "_blank");
+          formRef.current?.reset();
         }}
-        className="bg-[#323232] rounded-full mt-12 relative flex items-center text-gray-600 w-[calc(100svw-2rem)] max-w-120 px-1.5 py-1"
+        className="bg-[#323232] rounded-lg mt-12 md:mt-16 relative flex items-center text-gray-600 w-[calc(100svw-2rem)] max-w-160 py-1"
       >
         <input
           type="search"
@@ -22,7 +27,7 @@ export default function App() {
           placeholder="Search ChatGPT"
           className="h-10 px-5 pr-10 text-sm focus:outline-none flex-grow flex-shrink basis-0 text-white"
         />
-        <button type="submit" className="mr-4">
+        <button type="submit" className="mr-5 cursor-pointer">
           <svg
             className="h-4 w-4 fill-white"
             xmlns="http://www.w3.org/2000/svg"
