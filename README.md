@@ -8,7 +8,7 @@
   </a>
 </p>
 
-A minimal React + Vite web app that lets you search shared ChatGPT links across the web using DuckDuckGo.
+A minimal NextJS web app that lets you search shared ChatGPT links across the web using DuckDuckGo.
 Built out of curiosity about how rerouting works for ChatGPT URLs discovered through Google dorking and similar scraping techniques.
 
 ## 🚀 Features
@@ -26,7 +26,7 @@ npm install
 npm run dev
 ```
 
-Then open your browser at [http://localhost:5173](http://localhost:5173)
+Then open your browser at [http://localhost:3000](http://localhost:3000)
 
 ## 💡 Motivation
 
