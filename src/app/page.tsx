@@ -1,15 +1,9 @@
-import { parseURL } from "./logic";
+"use client";
+
 import { useRef } from "react";
+import parseURL from "./logic";
 
-const sendPosthog = async (searchTerm: string) => {
-  await fetch("/api/posthog", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ searchTerm }),
-  });
-};
-
-export default function App() {
+export default function Home() {
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
@@ -27,7 +21,7 @@ export default function App() {
           const formData = new FormData(e.currentTarget);
           const searchTerm = formData.get("search") as string;
           if (!searchTerm) return;
-          sendPosthog(searchTerm);
+          // sendPosthog(searchTerm);
           const url = parseURL(searchTerm);
           window.open(url, "_blank");
           formRef.current?.reset();
