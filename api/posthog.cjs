@@ -1,4 +1,4 @@
-import PostHogClient from "./../src/posthog/index";
+import PostHogClient from "../src/posthog/index";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
