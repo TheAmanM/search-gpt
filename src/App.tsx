@@ -1,12 +1,24 @@
 import { parseURL } from "./logic";
 import { useRef } from "react";
 
+const sendPosthog = async (searchTerm: string) => {
+  await fetch("/api/posthog", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ searchTerm }),
+  });
+};
+
 export default function App() {
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
     <main className="h-svh w-svw flex flex-col items-center justify-center bg-[#1A1A1A] text-gray-400">
-      <h1 className="font-bold text-4xl md:text-5xl text-white">Search GPT</h1>
+      <a href="/">
+        <h1 className="font-bold text-4xl md:text-5xl text-white">
+          Search GPT
+        </h1>
+      </a>
       <p className="mt-2 md:text-xl">A "search engine" but for Chat GPT.</p>
       <form
         ref={formRef}
@@ -15,6 +27,7 @@ export default function App() {
           const formData = new FormData(e.currentTarget);
           const searchTerm = formData.get("search") as string;
           if (!searchTerm) return;
+          sendPosthog(searchTerm);
           const url = parseURL(searchTerm);
           window.open(url, "_blank");
           formRef.current?.reset();
