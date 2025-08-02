@@ -1,69 +1,33 @@
-# React + TypeScript + Vite
+# 🔍 Search-GPT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Search GPT Banner](https://raw.githubusercontent.com/TheAmanM/search-gpt/refs/heads/main/public/og-image.png)
 
-Currently, two official plugins are available:
+<p align="center">
+  <a href="https://search-gpt-app.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Live_App-Search--GPT-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo" />
+  </a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A minimal React + Vite web app that lets you search shared ChatGPT links across the web using DuckDuckGo.
+Built out of curiosity about how rerouting works for ChatGPT URLs discovered through Google dorking and similar scraping techniques.
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Search for shared ChatGPT conversations from one place
+- Utilizes DuckDuckGo for clean, anonymous querying
+- Simple and fast frontend built with React + Vite
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/TheAmanM/search-gpt
+cd search-gpt
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then open your browser at [http://localhost:5173](http://localhost:5173)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💡 Motivation
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This was a small side project exploring how re-routing and scraping interact with publicly shared ChatGPT links, inspired by the patterns exposed through Google dorking.
