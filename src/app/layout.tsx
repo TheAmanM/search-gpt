@@ -15,6 +15,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Search GPT",
     description: 'A "search engine" but for Chat GPT.',
+    url: "https://search-gpt-app.vercel.app",
+    type: "website",
+    images: [
+      {
+        url: "/src/app/logo.png",
+        alt: "Search GPT Logo",
+      },
+    ],
   },
   twitter: {
     title: "Search GPT",
